@@ -85,7 +85,7 @@ El objetivo de este componente es mostrar la información de un personaje.
 
 Este componente nos va a servir para renderizar muchos componentes `Card`. Es decir, será el "contenedor" de las Card.
 
-Recibirá un arreglo de **`personajes`** (con todos sus datos), y va a utilizar un componente **`Card`**(reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
+Recibirá un arreglo de **`personajes`** (con todos sus datos), y va a utilizar un componente **`Card`** (reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
 
 <img src="./img/Cards.png" height="250px">
 
