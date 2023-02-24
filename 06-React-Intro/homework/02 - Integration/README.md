@@ -61,8 +61,9 @@ En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 compon
 
 ## **👩‍💻 01 Componente Card**
 
-Este componente **`Card`** va a mostrar las propiedades: - **name**: nombre.
+Este componente **`Card`** va a mostrar las propiedades:
 
+-  **name**: nombre.
 -  **species**: especie.
 -  **genre**: género.
 -  **image**: imagen.
