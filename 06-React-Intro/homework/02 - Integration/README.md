@@ -1,4 +1,4 @@
-# HW 06: React-Intro | Integración
+# **HW 06: React-Intro | Integración**
 
 ## **Duración estimada** 🕒
 
@@ -41,13 +41,17 @@ Además:
 
 <img src="./img/ramas.jpg" alt="" />
 
----
-
-## **PARTE 1**
+</br >
 
 ---
 
-### **COMENCEMOS**
+<div align="center" >
+
+## **🚀 PARTE UNO 🚀**
+
+</div >
+
+<br />
 
 Tu primer paso será ejecutar el comando `npm install` para instalar todas las dependencias.
 
@@ -55,98 +59,109 @@ En el archivo `App.js` ya tenemos importados y estamos renderizando los 3 compon
 
 <br />
 
-### **👩‍💻 01 - Haz el componente Character Card**
+## **👩‍💻 01 Componente Card**
 
-(`components/Card.js`)
+Este componente **`Card`** va a mostrar las propiedades: - **name**: nombre.
+
+-  **species**: especie.
+-  **genre**: género.
+-  **image**: imagen.
+-  **onClose**: función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
+
+Además cuando el usuario haga click en la X de "cerrar", se invocará una función que también viene como props (**onClose**).
+
+El objetivo de este componente es mostrar la información de un personaje.
 
 <img src="./img/characterCard.png" height="250px">
 
-Esta tarjeta va a mostrar el **nombre** de un personaje, su **especie**, **género** e **imagen**.
-
-Además cuando el usuario haga click en la X de "cerrar", se invocará una función que también viene como props.
-
-Este componente `Card` va a recibir las siguientes props:
-
--  **name**: Nombre
--  **species**: Especie
--  **gender**: Género
--  **image**: Imagen
--  **onClose**: La función que se va a ejecutar cuando el usuario haga click en el botón de cerrar.
-
-> Más adelante todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **(src/data.js)**, para que ya puedas ver tu componente funcionando.
-
----
+> [**NOTA**]: más adelante todos estos datos van a venir de una API externa, pero por ahora no nos interesa esa parte. Por el momento nosotros te los vamos a brindar desde un archivo local **`(src/data.js)`**, para que ya puedas ver tu componente funcionando.
 
 <br />
 
-### **👩‍💻 02 - Haz el componente Cards**
+---
 
-(`components/Cards.js`)
+## **👩‍💻 02 - Componente Cards**
+
+Este componente nos va a servir para renderizar muchos componentes `Card`. Es decir, será el "contenedor" de las Card.
+
+Recibirá un arreglo de **`personajes`** (con todos sus datos), y va a utilizar un componente **`Card`**(reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
 
 <img src="./img/Cards.png" height="250px">
 
-Este Componente nos va a servir para renderizar **varios** componentes `Card`.
-
-Básicamente, va a recibir un arreglo de `personajes` (con todos sus datos), y va a utilizar un componente `Card` (reutilizando el mismo que ya hicimos en el punto anterior) por cada uno de ellos, pasándole las props correspondientes.
-
-> Tip: Usar el método `map` y devolver un componente `Card` por cada elemento del arreglo. [Acá](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) un ejemplo de la documentación de React.
-
----
+> [**NOTA**]: utilizar el método **`map`** y devolver un componente **`Card`** por cada elemento del arreglo. [**Acá**](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) un ejemplo de la documentación de React.
 
 <br />
 
-### **👩‍💻 03 - Haz el componente de la de Barra de búsqueda**
+---
 
-(`components/SearchBar.js`)
+## **👩‍💻 03 Componente SearchBar**
+
+Este componente nos permitirá buscar y agregar nuevos personajes a nuestra página.
+
+Recibe por props una función **`onSearch`**. Dicha función recibe un parámetro que por el momento no estará definido.
+
+La función **`onSearch`** se debe ejecutar cuando se haga click en el botón **`Agregar`**.
 
 <img src="./img/SearchBar.png" height="50px">
 
-Vamos a crear este componente para luego poder agregar más personajes que deseemos ver.
-
-Este Componente recibe por props una función `onSearch`, dicha función recibe un parámetro (que más adelante será el ID del personaje tomado desde el input; pero de momento le pasamos uno cualquiera, ya que aún no estamos utilizando estados dentro del componente).
-
-La función `onSearch` se debe ejecutar cuando se haga click en el botón `Agregar`.
-
 <br />
 
 ---
 
-## **PARTE 2**
+<div align="center" >
 
----
+## **🚀 PARTE DOS 🚀**
 
-### **¡Listo! Ahora creamos una app desde cero...**
+</div >
 
-¿Ya completaste los puntos anteriores y funciona todo? ¡Perfecto! Ya podemos comenzar a crear nuestra propia app:
+<br />
+
+### **¡Listo! Es hora de crear nuestra app...**
+
+¿Ya completaste los puntos anteriores y todo funciona? ¡Perfecto! Ya podemos comenzar a crear nuestra propia app:
 
 1. En tu terminal, dirígete a un nuevo directorio (por ejemplo, tu escritorio). Allí es dónde crearemos nuestra app.
 
-2. Ahora utiliza _CRA_ (create-react-app) mediante **npx** para crear una nueva app de React:
+2. Ahora utiliza **_`CRA`_** (create-react-app) mediante **npx** para crear una nueva app de React:
 
 ```bash
 npx create-react-app rick_and_morty
 ```
 
-> Hint: para el nombre de tu app no puedes usar mayúsculas ni el signo "&"
+> [**NOTA**]: para el nombre de tu app no puedes usar mayúsculas ni el símbolo "&".
 
 Al término del proceso, podrás ver que en tu directorio se creó una nueva carpeta llamada "rick_and_morty". Abre esta carpeta con tu Visual Studio Code. Allí encontrarás algo como esto:
 
 <img src="./img/cra_01.png" height="200px">
 
-3. Dentro de esta nueva carpeta tipeamos:
+3. Dentro de esta nueva carpeta ejecuta:
 
 ```bash
-npm start
+    npm start
 ```
 
-> Hint: Si aún tenemos corriendo el server local de la homework Integration Parte 1, vamos a obtener un error debido a que el puerto predeterminado (3000) está ocupado. Podemos elegir utilizar otro puerto, o terminar el proceso anterior y luego reintentarlo.
+> [**NOTA**]: si aún tenemos corriendo el server local de la homework Integration Parte 1, vamos a obtener un error debido a que el puerto predeterminado (3000) está ocupado. Podemos elegir utilizar otro puerto, o terminar el proceso anterior y luego reintentarlo.
 
 Esperamos que se "levante" el servidor local y luego veremos algo así:
 
 <img src="./img/cra_02.gif" height="360px">
 
--  Ahora simplemente tendrás que reemplazar la carpeta `/src` de este nuevo proyecto que acabas de crear, por la misma carpeta en la que estuviste trabajando dentro de esta homework.
+<br />
 
-En el navegador ya deberías ver los cambios. Lo que hicimos en la homework Integration Parte 1 está corriendo como una app independiente.
+---
 
-Listo! Ya tienes tu primer app hecha con React 👏🏼🚀
+<div align="center" >
+
+## **🚀 PARTE TRES 🚀**
+
+</div >
+
+<br />
+
+Ahora simplemente debes seguir estos pasos:
+
+1. Reemplaza la carpeta **`src`** de tu nuevo proyecto por la que tienes en esta carpeta ([**src**](./src/)).
+
+2. Comprueba que en el navegador deberías ver los cambios.
+
+Listo! Ya tienes tu primer app hecha con React 👏🏼.
