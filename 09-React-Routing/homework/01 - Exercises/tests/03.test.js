@@ -93,7 +93,7 @@ describe("03 | Ejercicios", () => {
   it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/'", () => {
     const navBar = mount(
       <MemoryRouter
-        initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
+        initialEntries={["/", "/cruises/2", "/shipping", "/discounts"]}
       >
         <NavBar />
       </MemoryRouter>
@@ -104,7 +104,7 @@ describe("03 | Ejercicios", () => {
   it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/shipping'", () => {
     const navBar = mount(
       <MemoryRouter
-        initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
+        initialEntries={["/", "/cruises/2", "/shipping", "/discounts"]}
       >
         <NavBar />
       </MemoryRouter>
@@ -112,15 +112,15 @@ describe("03 | Ejercicios", () => {
     expect(navBar.find("NavLink").at(1).prop("to")).toBe("/shipping");
   });
 
-  it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/promotions'", () => {
+  it("Componente NavBar | Debería renderizar un </NavLink> para redirigir a '/discounts'", () => {
     const navBar = mount(
       <MemoryRouter
-        initialEntries={["/", "/cruises/2", "/shipping", "/promotions"]}
+        initialEntries={["/", "/cruises/2", "/shipping", "/discounts"]}
       >
         <NavBar />
       </MemoryRouter>
     );
-    expect(navBar.find("NavLink").at(2).prop("to")).toBe("/promotions");
+    expect(navBar.find("NavLink").at(2).prop("to")).toBe("/discounts");
   });
 
   afterEach(() => jest.restoreAllMocks());

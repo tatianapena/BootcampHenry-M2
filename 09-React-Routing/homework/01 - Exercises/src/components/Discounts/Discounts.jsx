@@ -12,17 +12,17 @@ export default function Promotions() {
     >
       <img
         style={{ width: "50vw" }}
-        src="https://cdn-content.crucerum.com/public/storage/destinos/1517345477.jpg"
+        src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546095/Henry_hws_refactor/discount1_jj4qmc.jpg"
         alt="prom1"
       />
       <img
         style={{ width: "50vw", paddingTop: "2em" }}
-        src="https://www.tarjetadeoferta.com/uploads/contest_det/avatar_dets/000/000/002/original/Banner.jpg"
+        src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546095/Henry_hws_refactor/discount2_g99cit.jpg"
         alt="prom2"
       />
       <img
         style={{ width: "50vw", paddingTop: "2em" }}
-        src="https://static.traveltek.net/uploaded/2020/2/1581093734_hpbfredolsenjanv2.jpg"
+        src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546095/Henry_hws_refactor/discount3_spq9bh.jpg"
         alt="prom3"
       />
     </div>
