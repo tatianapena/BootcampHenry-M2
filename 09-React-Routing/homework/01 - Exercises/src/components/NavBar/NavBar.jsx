@@ -10,7 +10,7 @@ export default function NavBar() {
           <img src={logoHenry} alt="logo-henry" />
         </li>
         <li>
-          <h1>Central de Cruceros </h1>
+          <h1>Central de Cruceros</h1>
         </li>
         <div className={styleNav.options}>
           <li>
