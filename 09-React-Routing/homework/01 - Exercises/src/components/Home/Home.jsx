@@ -1,5 +1,7 @@
 import React from "react";
 import Cards from "../Cards/Cards";
+import logo from "../../assets/logo.png";
+import styleHome from "./Home.module.css"
 
 export default function Home() {
   const [cruise, setCruise] = React.useState([]);
@@ -16,6 +18,7 @@ export default function Home() {
 
   return (
     <div>
+      <img className={styleHome.logo} src={logo} alt="logo"  />
       <Cards cruise={cruise} />
     </div>
   );

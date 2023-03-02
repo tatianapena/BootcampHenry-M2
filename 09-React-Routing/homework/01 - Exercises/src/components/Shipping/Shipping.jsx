@@ -7,37 +7,37 @@ export default function Shipping() {
       <ul>
         <li>
           <img
-            src="https://seekvectorlogo.com/wp-content/uploads/2018/09/carnival-cruise-vector-logo-small.png"
+            src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546096/Henry_hws_refactor/naviera-carnival_vfhkxk.png"
             alt="Carnival"
           />
         </li>
         <li>
           <img
-            src="https://img.cruisecritic.net/img-cc/image/18682924/image_x_21.jpg?auto=compress%2Cformat&fp-z=1&h=420&w=840&ar=2%3A1&dpr=1&q=55&ixlib=react-9.0.2"
+            src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546096/Henry_hws_refactor/naviera-azamara_qrwqrh.jpg"
             alt="Azamara"
           />
         </li>
         <li>
           <img
-            src="https://www.cruisecapital.co.uk/wp-content/uploads/2020/07/Costa-Logo.png"
+            src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546096/Henry_hws_refactor/naviera-costa_pos2lt.png"
             alt="Costa"
           />
         </li>
         <li>
           <img
-            src="https://www.cruisemapper.com/images/lines/85.jpg"
+            src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546096/Henry_hws_refactor/naviera-croisieurop_l1e9ve.jpg"
             alt="CroisiMer"
           />
         </li>
         <li>
           <img
-            src="https://image.jimcdn.com/app/cms/image/transf/none/path/s7a76f7b3b0434b8e/image/if0d0e47e198c06ee/version/1501699542/silversea-cruises.jpg"
+            src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546097/Henry_hws_refactor/naviera-silversea_zmlqmg.jpg"
             alt="Silversea"
           />
         </li>
         <li>
           <img
-            src="http://crew-center.com/sites/default/files/disney-cruise-line-logo.png"
+            src="https://res.cloudinary.com/dpiy1qwcm/image/upload/v1677546096/Henry_hws_refactor/naviera-disney_gi8mqz.jpg"
             alt="DisneyCruise"
           />
         </li>

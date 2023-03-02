@@ -13,7 +13,7 @@ import Home from "../src/components/Home/Home";
 import CardDetail from "../src/components/CardDetail/CardDetail";
 import Shipping from "../src/components/Shipping/Shipping";
 import NavBar from "../src/components/NavBar/NavBar";
-import Promotions from "../src/components/Promotions/Promotions";
+import Discounts from "../src/components/Discounts/Discounts";
 
 jest.mock("../src/components/Home/Home", () => () => <></>);
 jest.mock("../src/components/CardDetail/CardDetail", () => () => <></>);
@@ -38,7 +38,7 @@ describe("02 | Ejercicios", () => {
     apiMock.get("/cruises").reply(200, data.cruises);
   });
 
-  routes = ["/", "/cruises/2", "/shipping", "/promotions"];
+  routes = ["/", "/cruises/2", "/shipping", "/discounts"];
 
   const componentToUse = (route) => {
     return (
@@ -58,7 +58,7 @@ describe("02 | Ejercicios", () => {
     expect(app.find(Home)).toHaveLength(1);
     expect(app.find(CardDetail)).toHaveLength(0);
     expect(app.find(Shipping)).toHaveLength(0);
-    expect(app.find(Promotions)).toHaveLength(0);
+    expect(app.find(Discounts)).toHaveLength(0);
   });
 
   it("El componente Shipping debería ser renderizado en la ruta /shipping", () => {
@@ -66,7 +66,7 @@ describe("02 | Ejercicios", () => {
     expect(app.find(CardDetail)).toHaveLength(0);
     expect(app.find(Home)).toHaveLength(0);
     expect(app.find(Shipping)).toHaveLength(1);
-    expect(app.find(Promotions)).toHaveLength(0);
+    expect(app.find(Discounts)).toHaveLength(0);
   });
 
   it("El componente CardDetail debería ser renderizado en la ruta /cruises/:id", () => {
@@ -74,12 +74,12 @@ describe("02 | Ejercicios", () => {
     expect(app.find(CardDetail)).toHaveLength(1);
     expect(app.find(Home)).toHaveLength(0);
     expect(app.find(Shipping)).toHaveLength(0);
-    expect(app.find(Promotions)).toHaveLength(0);
+    expect(app.find(Discounts)).toHaveLength(0);
   });
 
-  it("El componente Promotions debería ser renderizado en la ruta /promotions", () => {
+  it("El componente Discounts debería ser renderizado en la ruta /discounts", () => {
     const app = mount(componentToUse(routes[3]));
-    expect(app.find(Promotions)).toHaveLength(1);
+    expect(app.find(Discounts)).toHaveLength(1);
     expect(app.find(CardDetail)).toHaveLength(0);
     expect(app.find(Home)).toHaveLength(0);
     expect(app.find(Shipping)).toHaveLength(0);

@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./CardDetail.module.css";
 
+
 export default function CardDetail() {
+
   const [cruiseDetail, setCruiseDetail] = React.useState({});
   React.useEffect(() => {
     //eslint-disable-next-line
