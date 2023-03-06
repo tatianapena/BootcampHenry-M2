@@ -121,9 +121,9 @@ Esperamos que se "levante" el servidor local y luego veremos algo así:
 
 <img src="./img/cra_02.gif" height="360px">
 
----
-
 <br />
+
+---
 
 Ahora simplemente debes seguir estos pasos:
 
