@@ -10,7 +10,7 @@
 
 ## **INTRO**
 
-Encontrarás en esta homework la Cruise App ya estructurada con sus componentes, lo que debes realizar, de acuerdo con lo visto en clase, es el enrutamiento de la aplicación.
+En esta homework encontrarás la Cruise App ya estructurada con sus componentes, lo que debes realizar, de acuerdo con lo visto en clase, es el enrutamiento de la aplicación.
 
 <br />
 
@@ -40,7 +40,6 @@ npm install
 
 ```bash
 npm test
-npm start
 ```
 
 Si deseas correr por test, puedes utilizar:
@@ -110,8 +109,8 @@ Además:
 - Una carpeta llamada **NavBar**, la cual a su vez contiene:
   - El componente `NavBar.jsx`
   - La hoja de estilos NavBar.module.css
-- Una carpeta llamada **Promotions**, la cual a su vez contiene:
-  - El componente `Promotions.jsx`
+- Una carpeta llamada **Discounts**, la cual a su vez contiene:
+  - El componente `Discounts.jsx`
 - Una carpeta llamada **Shipping**, la cual a su vez contiene:
 
   - El componente `Shipping.jsx`
@@ -159,7 +158,7 @@ Además:
 
    - Home --> path: **"/"** element: `<Home/>`
    - Shipping --> path: **"/shipping"** element: `<Shipping/>`
-   - Promotions --> path: **"/promotions"** element: `<Promotions/>`
+   - Discounts --> path: **"/discounts"** element: `<Discounts/>`
    - CardDetail --> path: **"/cruises/:id"** element: `<CardDetail/>`
 
 3. Además necesitas que `NavBar` sea una ruta dinámica que aparezca en toda la aplicación, colocándola antes del componente Routes.
@@ -202,7 +201,7 @@ Además:
    - Renderiza el componente **NavLink** con el atributo `to` que redirija a la ruta `"/shipping"`, que envuelva la etiqueta span con el texto "Navieras".
    - Renderiza el componente **NavLink** con los siguientes atributos:
 
-     - `to` que redirija a la ruta `"/promotions"`, que envuelva la etiqueta span "Promociones".
+     - `to` que redirija a la ruta `"/discounts"`, que envuelva la etiqueta span "Promociones".
 
      - `className` esta propiedad debe tener adjunta una función. Esta función recibe un parámetro llamado `isActive` en forma de destructuring. En caso de que el parámetro sea **true** la clase de esta propiedad debe ser `.active` caso contrario, `.disable`.
 

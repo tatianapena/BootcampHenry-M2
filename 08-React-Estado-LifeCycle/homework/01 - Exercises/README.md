@@ -99,13 +99,20 @@ Además:
 🔹 Para estos ejercicios, trabajaremos sólo dentro la carpeta `components`. Dentro de esta carpeta encontrarás:
 
 -  Una carpeta llamada **Animals**, la cual a su vez contiene:
+
    -  El componente `Animals.jsx`
+   -  La hoja de estilos **Animals.module.css**
+
 -  Una carpeta llamada **Species**, la cual a su vez contiene:
+
    -  El componente `Species.jsx`
+   -  La hoja de estilos **Species.module.css**
 -  Una carpeta llamada **Zoo**, la cual a su vez contiene:
 
    -  El componente `Zoo.jsx`
    -  La hoja de estilos **Zoo.module.css**
+
+   <br />
 
    <img src="./img/ramas.jpg" alt="" />
 
@@ -302,6 +309,9 @@ Vamos a dar la funcionalidad correspondiente a la app para que cuando el usuario
 > -  Para recorrer el arreglo y retornar sólo los elementos necesarios, puedes usar el método `filter`. **Nota**: al hacer filter del estado zoo.animals, los datos que no coincidan con el filtrado, se perderían; puedes utilizar la propiedad "zoo.allAnimals" para mantener una copia de ese arreglo.
 
 > Para esta instancia deben pasar todos los tests. ✅ 🏆
+
+🔹 Estilos:
+Si quieres dar estilos a la miniApp, descomenta la línea donde se importan los archivos CSS en cada componente y aplica los estilos que correspondan (también puedes editar las hojas de estilo a tu gusto 🎨).
 
 🔹 Resultado esperado:
 

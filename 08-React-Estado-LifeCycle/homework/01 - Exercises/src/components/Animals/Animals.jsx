@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+// import styledAnimals from './Animals.module.css'
 
 export default class Animals extends React.Component {
-  constructor (props) {
-    super()
+  constructor(props) {
+    super();
   }
 
-  render () {
+  render() {
     return <div></div>
   }
 }
