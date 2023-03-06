@@ -7,7 +7,7 @@ export default function Card(props) {
          <h2></h2>
          <h2></h2>
          <h2></h2>
-         <img  src={} alt="" /> */}
+         <img src={} alt='' /> */}
       </div>
    );
 }
