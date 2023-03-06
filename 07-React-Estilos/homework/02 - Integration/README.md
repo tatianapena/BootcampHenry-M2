@@ -37,7 +37,7 @@ En esta homework podrás escoger entre cualquiera de los tipos de estilos que he
 
 ### **👩‍💻 EJERCICIO 1**
 
-¡Tu tarea consiste en agregar estilos CSS para que los componentes **Card**, **Cards** y \*SearchBar\*\* se vean increibles!
+¡Tu tarea consiste en agregar estilos CSS para que los componentes **Card**, **Cards** y **SearchBar** se vean increibles!
 
 No hay consignas que debas seguir, puedes darle tu toque personal. **Sé creativ@!** 🧑‍🎨
 
