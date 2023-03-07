@@ -99,8 +99,8 @@ Ahora simularemos una base de datos donde esté guardado un email y password. De
 1. En el archivo **`App.js`** crea lo siguiente:
 
    -  Un estado local llamado "**access**" que se inicialice en **`false`**.
-   -  Una variable llamada "**email**", y que sea igual a tu email.
-   -  Una variable "**password**", y que sea igual a una contraseña.
+   -  Una variable llamada "**EMAIL**", y que sea igual a tu email.
+   -  Una variable "**PASSWORD**", y que sea igual a una contraseña.
 
 </br >
 
@@ -139,7 +139,9 @@ useEffect(() => {
 
 1. Dirígete al archivo **`App.js`** y pásale la función **login** que creaste en el ejercicio anterior al componente **`Form`** mediante props.
 
-2. En el componente **`Form`** crea una función "**handleSubmit**". Esta función por dentro sslo debe ejecutar la función "**login**" recibida por props. No te olvides de pasarle por parámetro tu estado local _`userData`_!
+2. En el componente **`Form`** crea una función "**handleSubmit**". Esta función por dentro solo debe ejecutar la función "**login**" recibida por props. ¡No te olvides de pasarle por parámetro tu estado local _`userData`_!
+
+3. La función **handleSubmit** debe ejecutarse cuando se hace click en el botón **submit**.
 
 ¡Listo! Ya tienes un login funcional 😀🥳🤓
 
