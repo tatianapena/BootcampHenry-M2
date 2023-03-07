@@ -1,6 +1,6 @@
-## HW 10: React-Forms | Integración
+# **💪 HW10 | React Forms - Integration**
 
-## **Duración estimada 🕒**
+## **🕒 DURACIÓN ESTIMADA**
 
 3 horas
 
@@ -8,88 +8,74 @@
 
 ---
 
-## **Rick & Morty App**
+<div align="center">
 
-### **INTRO**
+## **💻 RICK AND MORTY APP 💻**
 
-En la integración de hoy crearemos un formulario de login. Así, cada vez que ingresemos a nuestra app tendremos que logearnos para utilizarla. Tanto el formulario como sus validaciones las haremos con Javascript.
+</div>
 
-Nuestro formulario va a estar compuesto de:
+## **📝 INTRO**
 
--  Username: el nombre de usuario tiene que ser un email, si no, tiene que mostrar un error.
--  Password: la contraseña tiene que contener por lo menos un número y tener una longitud de entre 6 y 10 caracteres, si no debe mostrar un error.
-
-<br />
-
----
-
-## **COMENCEMOS**
-
-Vamos a comenzar creando el componente que nos falta en nuestra carpeta components. Creamos `Form.jsx` con su respectivo archivo `.css` para darle estilos.
-
----
-
-### 👩‍💻 EJERCICIO 1
-
-### Estructura
-
-Vamos a trabajar en el archivo `Form.jsx` que acabas de crear.
-
-Primero agregaremos una etiqueta `<div />` que envolverá a todo el componente. Tiene que haber una etiqueta `<label />` y una `<input />` tanto para el **username** como para la **password**. Por último, agrega una etiqueta `<button />`.
-
-Dale algo de estilos al componente. Te dejamos una plantilla de cómo puede quedar!
-
-<img src="./img/form_v1.png" alt="" />
+En esta homework crearemos un sistema de login para nuestra aplicación. De esta forma podremos practicar formularios y, además, cada vez que ingresemos a la App tendremos que tener un email y una contraseña.
 
 <br />
 
 ---
 
-### **👩‍💻 EJERCICIO 2**
+### **👩‍💻 EJERCICIO 1 | Form**
 
-### **Ruteo**
+Ahora crearemos el formulario que nos permitirá logearnos en un futuro.
 
-Ahora deberás cumplir los siguientes dos pasos:
+1. Crea un componente con el nombre **`Form`**.
+2. Dentro de este componente se deben renderizar los siguientes elementos:
 
-1. Crea una ruta en el archivo `app.jsx` para que el formulario se renderice en el path "`/`".
-2. Si obervas la imagen del ejercicio anterior, la barra de navegación también se muestra en el **Login**. Cambia esto de modo que el `<Nav />` se muestre en todos lados, menos en el **Login**.
+   -  Una etiqueta **`form`** que envolverá a todo el componente.
+   -  Una etiqueta **`label`** junto con un **`input`** para el email.
+   -  Una etiqueta **`label`** junto con un **`input`** para la password.
+   -  Un **`button`** con el texto "**_Submit_**".
 
-> **PISTA:** investiga sobre el hook "useLocation" de react-router-dom, y piensa cómo hacer un renderizado condicional.
+¡Dale algo de estilos al componente! Puede quedar algo como esto...
 
-<br />
-
----
-
-### **👩‍💻 EJERCICIO 3**
-
-### **Estado del formulario**
-
-El siguiente paso es poder controlar nuestro formulario. Para esto trabajaremos con un estado local con esta estructura:
-
-```js
-// Form.jsx
-const [userData, setUserData] = React.useState({ username: '', password: '' });
-```
-
-Ahora conecta tu estado local con los inputs correspondientes utilizando la propiedad `value`.
-
-Por último, usaremos el evento `onChange` en ambos inputs para poder guardar la información del usuario. Te sugerimos que crees una función **handleInputChange** la cual reciba el evento del input, y a partir de esta se modifique el estado local.
+<img src="./img/form.png" alt="" />
 
 <br />
 
 ---
 
-### **👩‍💻 EJERCICIO 4**
+### **👩‍💻 EJERCICIO 2 | Routing**
 
-### **Validaciones**
+Ahora le diremos a nuestro formulario dónde debe renderizarse. Para esto:
 
-En tu componente `<Form />` crea un nuevo estado local llamado "**errors**". Este es el estado que usarás para encontrar errores en el formulario.
+1. Crea una ruta en el archivo **`App.js`** y crea una ruta para que el formulario se renderice en **`/`**.
+2. Si obervas la imagen del ejercicio anterior, la barra de navegación aún se muestra en el **login**. Deberás crear un renderizado condicional, de modo tal que la **`Nav`** se muestre siempre y cuando no estemos en la ruta **`/`**.
 
-Luego crea un nuevo archivo en la carpeta de tu componente Form.jsx con el nombre "**validation.js**". Aquí dentro deberás crear una función que valide lo siguiente:
+> **PISTA:** investiga sobre el hook **`useLocation`** de react-router-dom, y piensa cómo hacer el renderizado condicional.
 
-**USERNAME**
+<br />
 
--  el nombre de usuario tiene que ser un email _(explora validaciónes REGEX en internet!)_.
+---
+
+### **👩‍💻 EJERCICIO 3 | Form control**
+
+En este ejercicio controlaremos y gestionaremos la información que ingrese el usuario en nuestro formulario. Para esto:
+
+1. Crea un estado local llamado **userData**. Este debe inicializarse como un objeto con las propiedades **email** y **password** iguales a un string vacío.
+2. Conecta tu estado local con los inputs correspondientes utilizando la propiedad **`value`**.
+3. Crea una función llamada **handleChange** que nos permita reflejar el texto ingresado de los inputs en nuestro estado local.
+
+<br />
+
+---
+
+### **👩‍💻 EJERCICIO 4 | Validaciones**
+
+1. En tu componente **`Form`** crea un nuevo estado local llamado "**errors**" que se inicialice como un objeto vacío. Este es el estado que utilizarás para encontrar errores en el formulario.
+
+2. Ahora crea un archivo con el nombre "**validation.js**". Aquí dentro deberás crear una función que valide los siguientes puntos:
+
+**EMAIL**
+
+-  el nombre de usuario tiene que ser un email (¡Explora validaciónes REGEX en internet!).
 -  el nombre de usuario no puede estar vacío.
 -  el nombre de usuario no puede tener más de 35 caracteres.
 
@@ -98,68 +84,64 @@ Luego crea un nuevo archivo en la carpeta de tu componente Form.jsx con el nombr
 -  la contraseña tiene que tener al menos un número.
 -  la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
 
-No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo de cómo puede quedar.
+¡No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo de cómo puede quedar.
 
-<img src="./img/input_error.png" alt="" >
+<img src="./img/validations.png" alt="" >
 
 <br />
 
 ---
 
-### **👩‍💻 EJERCICIO 5**
+### **👩‍💻 EJERCICIO 5 | Seguridad**
 
-### **Simulación de seguridad**
+Ahora simularemos una base de datos donde esté guardado un email y password. De esta forma, solo si la información de usuario coincide podrá ingresar a la aplicación. Para esto:
 
-Ahora simularemos una base de datos donde esté guardado un username y password. De esta forma, solo si la información de usuario coincide podrá usar la aplicación. Para esto:
+1. En el archivo **`App.js`** crea lo siguiente:
 
-1. En el archivo `App.js` crea lo siguiente:
-
-   -  Un estado local llamado "**access**" que se inicialice en `false`.
-   -  Una variable llamada "**username**", y que sea igual a tu email.
+   -  Un estado local llamado "**access**" que se inicialice en **`false`**.
+   -  Una variable llamada "**email**", y que sea igual a tu email.
    -  Una variable "**password**", y que sea igual a una contraseña.
 
-2. Crea una función llamada "**login**" que reciba por parámetro "_userData_". Esta función tiene que preguntar si el username y password que declaraste más arriba son iguales a los que les está llegando por parámetro. En caso afirmativo, el estado local access ahora será `true`. Importa el hook "**useNavigate**" de `react-router-dom` y haremos que nos redirija a `/home` si la información es correcta.
+</br >
+
+2. Crea una función llamada "**login**" que reciba por parámetro "_userData_". Esta función tiene que preguntar si el email y password que declaraste más arriba son iguales a los que les está llegando por parámetro. En caso afirmativo, el estado local access ahora será **`true`**. Importa el hook "**useNavigate**" de _react-router-dom_ y haremos que nos redirija a **`/home`** si la información es correcta.
 
 ```jsx
 const navigate = useNavigate();
 const [access, setAccess] = useState(false);
-const username = 'ejemplo@gmail.com';
-const password = '1password';
+const EMAIL = 'ejemplo@gmail.com';
+const PASSWORD = 'unaPassword';
 
 function login(userData) {
-   if (userData.password === password && userData.username === username) {
+   if (userData.password === PASSWORD && userData.email === EMAIL) {
       setAccess(true);
       navigate('/home');
    }
 }
 ```
 
-3. Por último, lleva el siguiente código a tu componente (no te olvides de importar el `useEffect`).
+3. Por último, lleva el siguiente código a tu componente (no te olvides de importar el **`useEffect`**).
 
 ```javascript
-//App.js
+// App.js
 useEffect(() => {
    !access && navigate('/');
 }, [access]);
 ```
 
-Esto no nos dejará navegar por la aplicación, al menos que ingresemos la información correcta!
-
 <br />
 
 ---
 
-### **👩‍💻 EJERCICIO 6**
+### **👩‍💻 EJERCICIO 6 | Login**
 
-### **Login**
+¡Ahora le daremos la funcionalidad de cambiar los permisos a nuestro login!
 
-Ahora le daremos la funcionalidad de cambiar los permisos a nuestro login! Para esto:
+1. Dirígete al archivo **`App.js`** y pásale la función **login** que creaste en el ejercicio anterior al componente **`Form`** mediante props.
 
-1. En el archivo `App.js`, le pasaremos la función **login** que creaste en el ejercicio anterior por props al componente `<Form />`.
+2. En el componente **`Form`** crea una función "**handleSubmit**". Esta función por dentro sslo debe ejecutar la función "**login**" recibida por props. No te olvides de pasarle por parámetro tu estado local _`userData`_!
 
-2. En el componente `<Form />`, crea una función "**handleSubmit**". Esta función por dentro sólo debe ejecutar la función "**login**" recibida por props. No te olvides de pasarle por parámetro tu estado local _userData_!
-
-¡Listo! Ya tienes un Login funcional!!😀🥳🤓
+¡Listo! Ya tienes un login funcional 😀🥳🤓
 
 Pruebalo ingresando la información que declaraste previamente.
 
@@ -169,6 +151,6 @@ Pruebalo ingresando la información que declaraste previamente.
 
 ### **📌 EJERCICIO EXTRA**
 
--  Ahora te desafiamos a que crees un botón "**Logout**" en tu componente `<Nav />`. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente `<Form />`.
+Te desafiamos a que crees un botón "**Log out**" en tu componente **`Nav`**. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente **`Form`**.
 
-> **PISTA:** lo puedes hacer creando una función **logout** en tu archivo App.js.
+> [**NOTA**]: lo puedes hacer creando una función **logout** en tu archivo App.js.
