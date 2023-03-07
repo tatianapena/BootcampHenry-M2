@@ -104,7 +104,7 @@ Una vez que hayas creado la función **`onSearch`** deberás:
 1. Pasársela como propiedad al componente **`Nav`**.
 2. Pasársela como propiedad al componente **`SearchBar`**.
 
-¡Listo! Si levantas tu proyecto y compruebas en tu navegador, cade vez que haces click sobre el botón "**_Agregar_**, se mostrará un nuevo personaje. Debería quedar algo así:
+¡Listo! Si levantas tu proyecto y compruebas en tu navegador, cade vez que haces click sobre el botón "**_Agregar_**", se mostrará un nuevo personaje. Debería quedar algo así:
 
 <img src="./img/onSearchFunction.gif" alt="" />
 
@@ -130,7 +130,7 @@ Podríamos escribir dentro de nuestra SearchBar el **ID** de un personaje, y que
 
 Ahora nos dirigiremos a la **`SearchBar`** para realizar algunas modificaciones. De esta forma podremos guardar el **ID** que escriba el usuario de nuestra aplicación.
 
-1. Importa y crea un estado local llamado **id**. Debe inicializarse como totalmente vacío.
+1. Importa y crea un estado local llamado **id**. Debe inicializarse como un string vacío.
 2. Crea una función **handleChange** de modo que, cada vez que el usuario escriba algo en el input, este se guarde en el estado local **id**.
 3. No te olvides de pasarle esta función al input, y asignarle a este el estado local como su **`value`**.
 4. Una vez que hayas cumplido con todos estos pasos, asegúrate de que cada vez que se ejecute la función **`onSearch`** esa reciba el estado **id** como argumento.
@@ -171,6 +171,9 @@ En este momento, el componente **`Cards`** les está pasando al componente **`Ca
 
 1. Dirígete a tu componente **`App.js`** y crea una función con el nombre **onClose**. Esta función recibirá por parámetro un **id**.
 2. Dentro de la función deberás realizar un filtro de tu estado local en el que te quedes con todos aquellos personajes cuyo **id** sea distinto al que recibes por parámetro.
+
+> [**NOTA**]: el id que recibes por parámetro es un string, pero el que debes comparar en tus personajes es un number. ¡Parséalo!
+
 3. Setea este resultado en tu estado local **characters**.
 4. Dirígete al componente **`Cards`** y envíale el **id** del personaje como propiedad al componente **`Card`**.
 5. Finalmente dirígete al componente **`Card`** y pasále el **id** que recibes por props a la funcion **onClose** cuando se ejecuta.
