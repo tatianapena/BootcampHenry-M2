@@ -156,3 +156,4 @@ Pruebalo ingresando la información que declaraste previamente.
 Te desafiamos a que crees un botón "**Log out**" en tu componente **`Nav`**. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente **`Form`**.
 
 > [**NOTA**]: lo puedes hacer creando una función **logout** en tu archivo App.js.
+
