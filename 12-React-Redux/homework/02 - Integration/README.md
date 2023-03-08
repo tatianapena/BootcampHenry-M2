@@ -22,6 +22,8 @@ En esta homework crearemos un nuevo espacio para guardar a nuestros personajes f
 
 ---
 
+## **📋 INSTRUCCIONES**
+
 ### **👩‍💻 EJERCICIO 1 | Redux & Configuration**
 
 Para comenzar, tendrás que instalar las dependencias **redux**, **react-redux** y **redux-thunk** con el comando:

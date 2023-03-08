@@ -26,6 +26,8 @@ En esta homework crearemos dos cosas que harán más completa nuestra aplicació
 
 ---
 
+## **📋 INSTRUCCIONES**
+
 ### **👩‍💻 EJERCICIO 1 | Actions**
 
 Dirígete al archivo **`actions`** y crea las siguientes funciones:

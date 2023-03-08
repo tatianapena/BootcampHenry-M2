@@ -24,6 +24,8 @@ Adicionalmente, crearemos otro componente denominado **`Nav`** que será nuestra
 
 ---
 
+## **📋 INSTRUCCIONES**
+
 ### **👩‍💻 EJERCICIO 1 | Nav**
 
 1. Dirígete a tu archivo **`App.js`** y elimina tu SearchBar.
