@@ -1,6 +1,6 @@
-# HW 07 - React-Estilos | Integración
+# **💪 HW7 | React Estilos - Integration**
 
-## **Duración estimada 🕒**
+## **🕒 DURACIÓN ESTIMADA**
 
 Dependerá de todo el amor que le quieras colocar a tu app 💛
 
@@ -8,32 +8,39 @@ Dependerá de todo el amor que le quieras colocar a tu app 💛
 
 ---
 
-## **INTRO**
+<div align="center">
 
-En este homework vas a utilizar `CSS Modules` o `Styled Components` (tú eliges) para dar estilos a los componentes que hicimos la clase anterior.
+## **💻 RICK AND MORTY APP 💻**
 
-🔹 Vas a trabajar directamente sobre la app que creamos en la homework anterior con CRA (create-react-app). Nuestra App de **_Rick & Morty_**.
+</div>
 
--  En caso de utilizar `Styled Components`, debemos instalar dicha dependencia, desde la carpeta raíz de nuestro proyecto de **_Rick & Morty:_**
+## **📝 INTRO**
+
+A partir de ahora todas las homeworks integradoras se trabajarán directamente en la aplicación que creaste en la homework anterior.
+
+En esta homework podrás escoger entre cualquiera de los tipos de estilos que hemos aprendido en la lecture para aplicarlos en tu aplicación:
+
+-  **Legacy**
+-  **Inline Styling**
+-  **CSS Module**
+-  **Styled Components**
+
+> [**NOTA**]: en caso de utilizar **`Styled Components`** deberás instalar dicha dependencia desde la carpeta raíz de tu proyecto de **_Rick & Morty:_**
 
 ```bash
-npm install styled-components
+    npm install styled-components
 ```
-
--  En caso de utilizar `CSS Modules` es necesario que la extensión de los archivos donde se definan los estilos sea `.module.css` (Por ejemplo: `Card.module.css`)
 
 <br />
 
 ---
 
-## **👩‍💻 EJERCICIO 1**
+### **👩‍💻 EJERCICIO 1**
 
-Tu tarea consiste en agregar estilos CSS para que los componentes de tu App de **_Rick&Morty_** queden muy _lindos!_
+¡Tu tarea consiste en agregar estilos CSS para que los componentes **Card**, **Cards** y **SearchBar** se vean increibles!
 
-No hay consignas que debas seguir, puedes darle tu toque personal. **Sé creativo/a!** 🧑‍🎨
+No hay consignas que debas seguir, puedes darle tu toque personal. **Sé creativ@!** 🧑‍🎨
 
-Recuerda que debes trabajar sobre tu proyecto de integración (que no está en este repositorio)
-
-🔹 Resultado esperado:
+Puedes guiarte con esta imagen:
 
 ![ejemplo](./img/01.png)
