@@ -40,8 +40,6 @@ Dentro del archivo **`store.js`** has la configuración del store. Una vez confi
 
 ### **👩‍💻 EJERCICIO 2 | Actions**
 
-### **ACTIONS**
-
 1. Construye dos _actions-creators_:
 
    -  **`addFav`**: esta función recibe un personaje por parámetro. Deberás retornar una action con el **type** igual a "**ADD_FAV**", y el payload igual a ese personaje.
@@ -70,7 +68,7 @@ Dirígete a tu archivo **`reducer.js`**. Allí deberás:
 
 4. Crea otro caso llamado "**REMOVE_FAV**" en el que puedas eliminar a un personaje de tu estado "_myFavorites_" a partir de un **id** que recibas por payload.
 
-> [**NOTA**]: ten en cuenta que el **`id`** que recibes por parámetro es un string, y el **`id`** de los personajes es un número.
+> [**NOTA**]: ten en cuenta que el **`id`** que recibes por payload es un string, y el **`id`** de los personajes es un número.
 
 5. No te olvides de tu caso _**default**_.
 
@@ -86,7 +84,7 @@ Dirígete a tu archivo **`reducer.js`**. Allí deberás:
 
 2. Conecta esta función con tu componente y recibe ambas funciones despachadoras por props.
 
-3. CRea un estado local en tu componente con el nombre **`isFav`** e inicialízalo en **`false`**.
+3. Crea un estado local en tu componente con el nombre **`isFav`** e inicialízalo en **`false`**.
 
 4. Crea una función en el cuerpo del componente llamada **handleFavorite**. Esta función estará dividida en dos partes:
 
