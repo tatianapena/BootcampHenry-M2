@@ -46,7 +46,6 @@ Dirígete al archivo **`reducer`** y sigue estos pasos:
 
 2. Modificaremos el caso **ADD_FAV** de la siguiente manera:
 
-   -  Actualmente tenemos en el return de este case:
    -  Dentro de la copia de tu estado global, reemplaza la propiedad **myFavorites** por **allCharacters**.
    -  Cuando retornes tu estado, agrega la propiedad **`allCharacters`** que también sea igual a la copia en la que agregaste el nuevo personaje.
 
@@ -89,7 +88,7 @@ Dirígete a tu componente **`Favorites`**. Dentro de él deberás:
    <option value="Male">Male</option>
    ```
 
-> [**NOTA**]: ten en cuenta que la propiedad **`unknown`** debe escribirse en monúsculas, ya que esa el la forma como proviene de la API.
+> [**NOTA**]: ten en cuenta que la propiedad **`unknown`** debe escribirse en minúsculas, ya que esa el la forma como proviene de la API.
 
 3. Importa las actions que creaste en esta homework y el hook **`useDispatch`**.
 
@@ -98,6 +97,18 @@ Dirígete a tu componente **`Favorites`**. Dentro de él deberás:
 5. Crea una función llamada **handleFilter**. En su interior solo debe despachar la action **`filterCards`** pasándole como argumento **`e.target.value`**.
 
 6. Agrega el atributo **`onChange`** a las etiquetas **`select`** pasándoles las funciones correspondientes a cada una.
+
+<br />
+
+---
+
+<br />
+
+### **👩‍💻 EJERCICIO 4 | Forzado de render**
+
+Ahora solo nos queda, en el componente **`Favorites`** crear un estado local que se llama **aux** e inicialo en **`false`**.
+
+Una vez creado, dentro del **handleOrder** setea este estado en su valor opuesto.
 
 <br />
 
