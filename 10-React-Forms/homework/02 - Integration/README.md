@@ -22,6 +22,8 @@ En esta homework crearemos un sistema de login para nuestra aplicación. De esta
 
 ---
 
+## **📋 INSTRUCCIONES**
+
 ### **👩‍💻 EJERCICIO 1 | Form**
 
 Ahora crearemos el formulario que nos permitirá logearnos en un futuro.
@@ -139,7 +141,7 @@ useEffect(() => {
 
 1. Dirígete al archivo **`App.js`** y pásale la función **login** que creaste en el ejercicio anterior al componente **`Form`** mediante props.
 
-2. En el componente **`Form`** crea una función "**handleSubmit**". Esta función por dentro solo debe ejecutar la función "**login**" recibida por props. ¡No te olvides de pasarle por parámetro tu estado local _`userData`_!
+2. En el componente **`Form`** crea una función "**handleSubmit**". Esta función recibe un evento por parámetro. Deberás ejecutas la función **`e.preventDefault()`**. Luego ejecuta la función "**login**" recibida por props. ¡No te olvides de pasarle por parámetro tu estado local _`userData`_!
 
 3. La función **handleSubmit** debe ejecutarse cuando se hace click en el botón **submit**.
 
@@ -156,4 +158,3 @@ Pruebalo ingresando la información que declaraste previamente.
 Te desafiamos a que crees un botón "**Log out**" en tu componente **`Nav`**. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente **`Form`**.
 
 > [**NOTA**]: lo puedes hacer creando una función **logout** en tu archivo App.js.
-

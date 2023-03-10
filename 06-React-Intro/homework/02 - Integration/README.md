@@ -24,6 +24,8 @@ En esta homework vamos a crear nuestro proyecto de **Rick and Morty**. Comenzare
 
 ---
 
+## **📋 INSTRUCCIONES**
+
 ## **🚀 PARTE UNO 🚀**
 
 <br />

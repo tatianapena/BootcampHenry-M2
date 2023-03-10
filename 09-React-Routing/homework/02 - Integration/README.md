@@ -22,6 +22,8 @@ En esta homework integraremos **React Router DOM** para enrutar las distintas vi
 
 ---
 
+## **📋 INSTRUCCIONES**
+
 ### **👩‍💻 EJERCICIO 1 | Instalación y configuración**
 
 1. Instala **`react-router-dom`** desde la terminal.
