@@ -14,7 +14,7 @@
 
 </div>
 
-## **📝 INTRO**
+## **📝 INTRODUCCIÓN**
 
 En esta homework crearemos dos cosas que harán más completa nuestra aplicación 😄.
 

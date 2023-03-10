@@ -14,7 +14,7 @@
 
 </div>
 
-## **📝 INTRO**
+## **📝 INTRODUCCIÓN**
 
 En esta homework crearemos un sistema de login para nuestra aplicación. De esta forma podremos practicar formularios y, además, cada vez que ingresemos a la App tendremos que tener un email y una contraseña.
 

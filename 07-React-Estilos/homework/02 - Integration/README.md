@@ -14,7 +14,7 @@ Dependerá de todo el amor que le quieras colocar a tu app 💛
 
 </div>
 
-## **📝 INTRO**
+## **📝 INTRODUCCIÓN**
 
 A partir de ahora todas las homeworks integradoras se trabajarán directamente en la aplicación que creaste en la homework anterior.
 
