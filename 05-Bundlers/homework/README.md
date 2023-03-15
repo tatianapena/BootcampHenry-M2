@@ -6,34 +6,33 @@
 
 Antes de que vayamos mucho mas, es importante entender el concepto de expresiones de funciones invocadas inmediatamente en Javascript (aka "IIFE"s).
 
-Primero, nota que cualquier "expresión" en Javascript puede ser escrita dentro de paréntesis para asegurarte que sea evaluada como un todo. Un caso de uso muy común de esto es especificar el orden de operaciones cuando hacemos matemática simple:   
+Primero, nota que cualquier "expresión" en Javascript puede ser escrita dentro de paréntesis para asegurarte que sea evaluada como un todo. Un caso de uso muy común de esto es especificar el orden de operaciones cuando hacemos matemática simple:
 
 ```js
-var twelve = 2 * 4 + 4     // 12
+var twelve = 2 * 4 + 4; // 12
 var sixteen = 2 * (4 + 4); // 16
 ```
 
 Segundo, nota que cuando guardas una función en una variable, esa función es una expresión de Javascript también - una expresión de función. Esto es opuesto a una declaración de función, que es el termino de cuando escribimos funciones usando el keyword `function` sin el `var`.
 
-
 ```js
 // una declaración de función
-function funcDeclaration () {
-  // etc
+function funcDeclaration() {
+   // etc
 }
 
 // una variable asignada a una expresión de función
-var someVariable = function funcExpression () {
-  // etc
-}
+var someVariable = function funcExpression() {
+   // etc
+};
 ```
 
 Una vez que la expresión de función es guardado dentro de una variable, podemos por supuesto invocarla:
 
 ```js
-var algunaVariable = function funcExpression () {
-  // etc
-}
+var algunaVariable = function funcExpression() {
+   // etc
+};
 
 algunaVariable();
 ```
@@ -41,14 +40,14 @@ algunaVariable();
 Sin embargo, si envolvés una expresión de función dentro de un par de paréntesis, eso va a causar la función que sea evaluada de la misma forma que sería evaluada si estuviésemos guardándolo en una variable. Esto significa que podemos invocar la expresión de función que contiene!
 
 ```js
-(function funcExpression () {
-  // etc
+(function funcExpression() {
+   // etc
 })();
 
 // comportamiento idéntico, pequeña diferencia estilística:
-(function funcExpression () {
-  // etc
-}());
+(function funcExpression() {
+   // etc
+})();
 ```
 
 Esto es a lo que nos referimos cuando hablamos de IIFEs - nos dan una forma de invocar una expresión de función "inmediatamente" sin necesitar guardarla en una variable.
@@ -63,7 +62,7 @@ Muchos lenguajes construidos para correr en sistemas operativos (e.g. Java) tien
 
 Este tipo de modularidad hace nuestro código fácil de leer, escribir, y mantener en el tiempo.
 
-Sin embargo, Javascript no fue originalmente destinado a ser corrido directamente en sistema operativo - fue enfocado a correr en un browser. Tampoco nos previmos usando Javascript para escribir aplicaciones grandes y escalables como hacemos hoy en día. Entonces, Javascript no vino originalmente con un sistema de módulos.  
+Sin embargo, Javascript no fue originalmente destinado a ser corrido directamente en sistema operativo - fue enfocado a correr en un browser. Tampoco nos previmos usando Javascript para escribir aplicaciones grandes y escalables como hacemos hoy en día. Entonces, Javascript no vino originalmente con un sistema de módulos.
 
 En cambio, todo el Javascript del browser se ejecuta en un mismo ambiente, donde el objeto window es el contexto global compartido de cualquier JavaScript corriendo en una sola página web. Cualquier variable que es declarada con la keyword `var` fuera de el cuerpo de una función (o declarada sin el keyword `var` en cualquier lado cuando no estamos en strict-mode) se convierte en pares key-value en el objeto `window`. Si deseas escribir Javascript en archivos separados, escribís el path a tu archivo en un `<script>` tag, y el browser pide el script de esa dirección y ejecuta ese script en el mismo, ambiente compartido como cada otro script.
 
@@ -74,8 +73,8 @@ Esto significa que si tenemos el siguiente archivo Javascript:
 
 var foo = 42;
 
-function bar () {
-  console.log(foo);
+function bar() {
+   console.log(foo);
 }
 ```
 
@@ -119,7 +118,7 @@ Por ejemplo, que pasa si agregamos una `fileC.js`...
 ```js
 // fileC.js
 
-var foo = "uh oh!"; // We've already declared a variable called "foo" in fileA.js! But we're redefining it here!
+var foo = 'uh oh!'; // We've already declared a variable called "foo" in fileA.js! But we're redefining it here!
 bar(); // this is our bar function from fileA.js!
 ```
 
@@ -166,32 +165,31 @@ Cambiemos `fileA.js` para que su contenido este envuelto en una IIFE. En cambio 
 // fileA.js
 
 (function () {
-  // Queremos mantener la variable foo privada a fileA.js
-  var foo = 42;
+   // Queremos mantener la variable foo privada a fileA.js
+   var foo = 42;
 
-  function bar () {
-    console.log(foo);
-  }
+   function bar() {
+      console.log(foo);
+   }
 
-  // Queremos usar la función `bar` en otro lugar, por lo que explícitamente lo anexamos al `window`
-  window.bar = bar;
+   // Queremos usar la función `bar` en otro lugar, por lo que explícitamente lo anexamos al `window`
+   window.bar = bar;
 })();
 ```
-
 
 Ahora cuando `fileC.js` corren:
 
 ```js
 // fileC.js
 
-var foo = "uh oh";
+var foo = 'uh oh';
 
 bar(); // Ahora esto va a ser 42!
 ```
 
 Cuando invocamos `bar` ahora, la función `bar` que invocamos va a tener closure sobre la variable `foo` dentro del IIFE - no va a colisionar con la variable `foo` declarada en `fileC.js`!
 
-Mientras que todavía hay chances que `window.bar` pueda ser sobrescrito por otro módulo, este patrón hizo las cosas mucho más fácil por un tiempo, podemos escribir ahora archivos JavaScript separados, envueltos en IIFEs, y podemos razonar sobre ellos en términos de sus "exports" (los valores que ellos anexan al objeto global `window`),  y sus "imports"/"dependencias" (los valores que necesitan que existan en el objeto global `window` antes de que ese archivo corrió). Otra variación de este concepto, [el patrón de revelación de módulos](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript), en el cual retornamos en la función eso que queremos exponer, permitió a los desarrolladores ser mucho mas explícitos sobre los "exports" de sus "módulos".
+Mientras que todavía hay chances que `window.bar` pueda ser sobrescrito por otro módulo, este patrón hizo las cosas mucho más fácil por un tiempo, podemos escribir ahora archivos JavaScript separados, envueltos en IIFEs, y podemos razonar sobre ellos en términos de sus "exports" (los valores que ellos anexan al objeto global `window`), y sus "imports"/"dependencias" (los valores que necesitan que existan en el objeto global `window` antes de que ese archivo corrió). Otra variación de este concepto, [el patrón de revelación de módulos](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript), en el cual retornamos en la función eso que queremos exponer, permitió a los desarrolladores ser mucho mas explícitos sobre los "exports" de sus "módulos".
 
 Sin embargo, con el amanecer de la edad de AJAX y JQuery, las aplicaciones web se fueron haciendo más grandes y más sofisticadas, y el "patrón IIFE" esta lejos de ser a prueba de tontos. Si queremos escribir aplicaciones de browser sofisticadas como las que existen en la computadora, vamos a necesitar herramientas mejores.
 
@@ -201,14 +199,13 @@ Aquí es donde las tecnologías como Webpack aparecen. Pero antes de eso, vamos 
 
 Más adelante veremos cómo funciona NODE en detalle, por ahora es importante entender que cada archivo JavaScript en un programa de Node es un módulo - las variables y funciones que declares en un módulo nunca van a colisionar con esas que tu declarás en otro módulo.
 
-
 ```js
 // fileA.js
 
 var foo = 42;
 
-function bar () {
-  console.log(foo);
+function bar() {
+   console.log(foo);
 }
 
 // Usamos `module.exports`para exportar los valores del módulo
@@ -221,7 +218,7 @@ module.exports = bar;
 // usamos `require`para importar valores de otros módulos
 var someFunc = require('./fileA');
 
-var foo = "no sweat"; // no tiene idea que usamos el mismo nombre para una variable en fileA
+var foo = 'no sweat'; // no tiene idea que usamos el mismo nombre para una variable en fileA
 someFunc(); // 42
 ```
 
@@ -253,8 +250,8 @@ Antes de sumergirnos en Webpack, tomate un momento para mirar a través de los a
   necesita window.bar de fileB.js
 ```
 
-+++Solución
-Podemos visualizar nuestro "árbol de dependencia" de esta forma.
++++Solución Podemos visualizar nuestro "árbol de dependencia" de esta forma.
+
 ```
 /socket/io/socket.io.js
   crea window.io
@@ -275,12 +272,11 @@ app.js
 
 ### Overview
 
-__Webpack__ es una herramienta extremadamente poderosa y flexible para construir Javascript, y sus características van mas allá de las cuales tomamos ventaja hoy. Igual, primero, te estarás preguntando... ¿qué es Webpack?  
+**Webpack** es una herramienta extremadamente poderosa y flexible para construir Javascript, y sus características van mas allá de las cuales tomamos ventaja hoy. Igual, primero, te estarás preguntando... ¿qué es Webpack?
 
 Webpack es un módulo de Node que podes instalar usando npm. Si recordás usando el compilador node-sass de Shoestring para compilar (o, más apropiadamente "transpilar" - ver la nota debajo) nuestros archivos SCSS a un solo archivo CSS - Webpack es como eso!
 
 Webpack toma nuestros archivos JavaScript y produce un solo, archivo JavaScript transformado. De la misma forma node-sass puede reconocer características SCSS (como nesting y @import) y formatear el archivo CSS saliente apropiadamente, Webpack puede reconocerlo cuando tu Javascript usa `require` y `module.exports`, y va transformar el archivo Javascript resultante apropiadamente también. Wow!
-
 
 #### NOTA AL PIE: TRANSPILACIÓN VS. COMPILACIÓN
 
@@ -292,20 +288,21 @@ Por el otro lado, un "transpilador" típicamente "transpila" un lenguaje de alto
 
 Empecemos la fiesta de paquetes!
 
-1. Primero, instala webpack:
-`npm install --save-dev webpack`
+1. Primero, instala webpack: `npm install --save-dev webpack`
 
-**Nota**: Te estarás preguntando porque estoy sugiriendo `--save-dev` y no solo `--save`. Esta es una característica de npm. El flag `-dev` marca a webpack como una dependencia de desarrollo. Webpack es una "build tool"(herramienta de desarrollo) que típicamente solo necesitamos mientras estamos desarrollando nuestra app. Cuando deployamos nuestra app a un servidor de  producción, ya vamos a tener todo construido y listo para andar, por lo que no es necesario instalar el paquete de `webpack` en el servidor de producción. En cambio, cuando instalamos nuestra app en nuestro servidor de producción, podemos añadir un flag especial (como `npm install --production`) para señalizar que la instalación debe ignorar las dependencias dev.
+**Nota**: Te estarás preguntando porque estoy sugiriendo `--save-dev` y no solo `--save`. Esta es una característica de npm. El flag `-dev` marca a webpack como una dependencia de desarrollo. Webpack es una "build tool"(herramienta de desarrollo) que típicamente solo necesitamos mientras estamos desarrollando nuestra app. Cuando deployamos nuestra app a un servidor de producción, ya vamos a tener todo construido y listo para andar, por lo que no es necesario instalar el paquete de `webpack` en el servidor de producción. En cambio, cuando instalamos nuestra app en nuestro servidor de producción, podemos añadir un flag especial (como `npm install --production`) para señalizar que la instalación debe ignorar las dependencias dev.
 
 En nuestro `package.json`, agrega un nuevo campo a `"scripts"` llamado `"build"`. Este debería simplemente ejecutar el comando webpack. Esto nos va a permitir ejecutar webpack al decir `npm run build` desde nuestra terminal.
 
 +++Solución
+
 ```json
 "scripts": {
   "start": "node server.js",
   "build": "webpack"
 }
 ```
+
 +++
 
 `npm run build` no va a hacer nada aún sin embargo. Necesitamos configurar webpack para que sepa que hacer! Vamos a hacer esto en la siguiente sección.
@@ -314,23 +311,22 @@ En nuestro `package.json`, agrega un nuevo campo a `"scripts"` llamado `"build"`
 
 Para que webpack sea capaz de construir nuestro archivo apropiadamente, necesitamos darle por lo menos dos piezas de información:
 
-- Un archivo para usar como un punto de arranque donde va a comenzar a construir
-- Un lugar para poner el output del programa (nuestro JavaScript transformado)
+-  Un archivo para usar como un punto de arranque donde va a comenzar a construir
+-  Un lugar para poner el output del programa (nuestro JavaScript transformado)
 
 Vamos a dárselos:
 
 1. En la raíz del directorio de nuestro repo, crea un archivo llamado `webpack.config.js`. Notá que el nombre "webpack.config.js" importa (de la misma manera el nombre package.json importa) - el programa webpack va a buscar automáticamente por este archivo con ese nombre.
-2. Copiá y pegá el siguiente código en tu `webpack.config.js`
-Copy and paste the following code into your webpack.config.js
+2. Copiá y pegá el siguiente código en tu `webpack.config.js` Copy and paste the following code into your webpack.config.js
 
 ```js
 module.exports = {
-  entry: './browser/app.js', // el punto de arranque de nuestro programa
-  output: {
-    path: __dirname + '/browser', // el path absoluto para el directorio donde queremos que el output sea colocado
-    filename: 'bundle.js' // el nombre del archivo que va a contener nuestro output - podemos nombrarlo como queramos pero bundle.js es lo típico
-  }
-}
+   entry: './browser/app.js', // el punto de arranque de nuestro programa
+   output: {
+      path: __dirname + '/browser', // el path absoluto para el directorio donde queremos que el output sea colocado
+      filename: 'bundle.js', // el nombre del archivo que va a contener nuestro output - podemos nombrarlo como queramos pero bundle.js es lo típico
+   },
+};
 ```
 
 Desde la linea de comando ejecutá `npm run build` - deberías recibir algún output que se vea como esto:
@@ -381,17 +377,16 @@ La forma en que webpack opera es que al principio con el archivo especificado en
 
 Dado esto, ¿qué archivo debería ser nuestro _entry point_(punto de entrada)?
 
-+++Solución
-Debería ser app.js! Algo interesante para notar aquí es que la forma que webpack toma los archivos es opuesta a la forma en que el browser las necesita. En vez de empezar con los archivos con la menor cantidad de dependencias y trabajar de ahí para abajo, webpack empieza en la raíz de nuestro árbol de dependencias y trabaja de ahí para arriba!
-+++
++++Solución Debería ser app.js! Algo interesante para notar aquí es que la forma que webpack toma los archivos es opuesta a la forma en que el browser las necesita. En vez de empezar con los archivos con la menor cantidad de dependencias y trabajar de ahí para abajo, webpack empieza en la raíz de nuestro árbol de dependencias y trabaja de ahí para arriba! +++
 
 ### Solo Puede Haber Uno
 
-Todo esto estando dicho -- la única forma de obtener JavaScript para correr en una página web es vía un `<script>` tag, por lo que no podemos completamente abandonar los tags `<script>` para siempre. Sin embargo, porque webpack va a hacer un solo gran archivo `bundle.js` con todos nuestros archivos .js  solo necesitamos requerir **un `<script>` tag**.
+Todo esto estando dicho -- la única forma de obtener JavaScript para correr en una página web es vía un `<script>` tag, por lo que no podemos completamente abandonar los tags `<script>` para siempre. Sin embargo, porque webpack va a hacer un solo gran archivo `bundle.js` con todos nuestros archivos .js solo necesitamos requerir **un `<script>` tag**.
 
 Comentá los `<script>` tags actuales en nuestro `index.html`. En su lugar, escribe un `<script>` tag que tome `bundle.js`.
 
 +++Solución
+
 ```html
 <!-- <script src="/socket.io/socket.io.js"></script> -->
 <!-- <script src="event-emitter.js"></script> -->
@@ -400,16 +395,17 @@ Comentá los `<script>` tags actuales en nuestro `index.html`. En su lugar, escr
 
 <script src="bundle.js"></script>
 ```
+
 +++
 
 ### Usando require y module.exports... en el Browser
 
 El momento ha llegado! Ve a través de los archivos Javascript y convertilos en modules! Si necesitas ayuda, aquí hay una checklist de cosas que podés hacer en cada archivo:
 
-- Remové las IIFE que rodean al código - ya no las vas a necesitar más. (Quiz: por qué?)
-- Identifica que cosas ese archivo expone al objeto `window` y y pon eso `module.exports`.
-- Identificá cualquier cosa que ese archivo obtiene de otro archivo en el objeto window y cambialo a que sea requerido.
-  + (nota: esto por supuesto no incluye cosas como `window.location.origin` o `window.addEventListner` - estamos manipulando el contexto global por gusto ahí)
+-  Remové las IIFE que rodean al código - ya no las vas a necesitar más. (Quiz: por qué?)
+-  Identifica que cosas ese archivo expone al objeto `window` y y pon eso `module.exports`.
+-  Identificá cualquier cosa que ese archivo obtiene de otro archivo en el objeto window y cambialo a que sea requerido.
+   -  (nota: esto por supuesto no incluye cosas como `window.location.origin` o `window.addEventListner` - estamos manipulando el contexto global por gusto ahí)
 
 Una vez realizado todos esos cambios deberían ejecutar el `npm run build` una vez más y luego hacer `npm start` lo cual les levantará la aplicación en su computadora en el puerto indicado en la consola y podrán ingresar a la URL indicada para ver wl whiteboard funcionando. En el caso de que no funcione es probable que al cambiar la sintaxis por esta nueva forma de require y module.exports hayan cometido algún error.
 
@@ -451,8 +447,8 @@ Para exportar un valor de un módulo, simplemente decí export:
 
 ```js
 export const foo = 42;
-export function bar () {
-  // etc
+export function bar() {
+   // etc
 }
 ```
 
@@ -460,14 +456,15 @@ Podés exportar la cantidad de expresiones que quieras. Sin embargo, podes espec
 
 ```js
 export const foo = 42;
-export function bar () { /* etc */ }
+export function bar() {
+   /* etc */
+}
 
 // este es nuestro default export
-export default function myDefault () {
-  // otras cosas...
+export default function myDefault() {
+   // otras cosas...
 }
 ```
-
 
 La diferencia entre un export normal y un default export va a ser importante cuando importemos... entonces aprendamos como hacer eso a continuación.
 
@@ -481,16 +478,17 @@ Dado el siguiente ejemplo de antes (vamos a llamar esto 'exports.js'):
 // exports.js
 
 export const foo = 42;
-export function bar () {
-  // etc
+export function bar() {
+   // etc
 }
 ```
 
 Importaríamos los valores de esta forma:
+
 ```js
 import { foo, bar } from './exports';
 
-console.log(foo) // 42
+console.log(foo); // 42
 bar(); // etc
 ```
 
@@ -502,12 +500,12 @@ Sin embargo, si tu archivo tiene un default export, las cosas se ven un poco mas
 // exports.js
 
 export const foo = 42;
-export function bar () {
-  // etc
+export function bar() {
+   // etc
 }
 
-export default function baz () {
-  // blah blah
+export default function baz() {
+   // blah blah
 }
 ```
 
@@ -527,7 +525,7 @@ Habiendo dicho esto, es perfectamente correcto que hayan módulos que tienen un 
 import baz, { foo, bar } from './exports.js';
 
 baz(); // blah blah
-console.log(foo) // 42
+console.log(foo); // 42
 bar(); // etc
 ```
 
@@ -536,3 +534,11 @@ Hay otras variaciones que podés tomar de este patrón fundamental de `import`/`
 ### Una ultima vez
 
 Esta bien - hagamos esto una vez más. Ve a través de tus archivos JavaScript y remplazá el sistema require/module.exports con el sistema import/export. Toma extra cuidado con las diferencias entre `export` y `export default`
+
+</br >
+
+---
+
+## **✅ FEEDBACK**
+
+### Usa este [**formulario**](https://docs.google.com/forms/d/e/1FAIpQLSe1MybH_Y-xcp1RP0jKPLndLdJYg8cwyHkSb9MwSrEjoxyzWg/viewform) para reportar tus observaciones de mejora o errores. Tu feedback es muy importante para seguir mejorando el modelo educativo.

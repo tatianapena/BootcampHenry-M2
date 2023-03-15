@@ -45,3 +45,11 @@ Una vez finalizada la homework, ejecuta los siguientes comandos para guardar tus
 	git commit -m 'Homework DOM: done'
 	git push
 ```
+
+</br >
+
+---
+
+## **✅ FEEDBACK**
+
+### Usa este [**formulario**](https://docs.google.com/forms/d/e/1FAIpQLSe1MybH_Y-xcp1RP0jKPLndLdJYg8cwyHkSb9MwSrEjoxyzWg/viewform) para reportar tus observaciones de mejora o errores. Tu feedback es muy importante para seguir mejorando el modelo educativo.
