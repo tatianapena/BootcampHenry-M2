@@ -14,7 +14,7 @@
 
 </div>
 
-## **📝 INTRO**
+## **📝 INTRODUCCIÓN**
 
 En esta homework vamos a crear nuestro proyecto de **Rick and Morty**. Comenzaremos construyendo nuestros primeros componentes: **card**, **cards** y **searchBar**.
 

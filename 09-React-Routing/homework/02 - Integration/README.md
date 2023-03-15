@@ -14,7 +14,7 @@
 
 </div>
 
-## **📝 INTRO**
+## **📝 INTRODUCCIÓN**
 
 En esta homework integraremos **React Router DOM** para enrutar las distintas vistas de nuestra aplicación. Esto quiere decir que podremos decidir en que path o "link" se renderice cada componente.
 

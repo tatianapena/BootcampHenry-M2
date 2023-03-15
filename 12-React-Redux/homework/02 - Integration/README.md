@@ -14,7 +14,7 @@
 
 </div>
 
-## **📝 INTRO**
+## **📝 INTRODUCCIÓN**
 
 En esta homework crearemos un nuevo espacio para guardar a nuestros personajes favoritos. ¡Podremos agregarlos y eliminarlos!
 
