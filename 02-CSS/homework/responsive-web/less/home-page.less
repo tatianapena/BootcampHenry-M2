@@ -3,7 +3,10 @@
 .home {
 
   .intro {
-
+    img {
+      border-radius: 15px;
+      margin:0.5em;
+    }
     h2 {
       padding: 15px;
     }
@@ -57,8 +60,14 @@
         margin-bottom: 26px;
       }
 
+      // .btn {
+      //   .button(fit-content;fit-content;1em;1.2em)
+      // }
+     
       .btn {
+        .boton-mix(@btn-bg-color,@porcelain,fit-content, fit-content)
       }
+     
     }
 
     .actual-img {
@@ -70,6 +79,40 @@
         height: auto;
         border-radius: 10px;
       }
+    }
+  }
+}
+
+@media @phone {
+  .home {
+    .intro img {
+      width: calc(100vw - 18px);
+      margin: 0.2em 0.7em;
+    }
+    .music-images .auricular {
+      width: calc(100vw - 18px);
+    }
+    .actual {
+      flex-direction: column-reverse;
+      padding: 50px 0px 50px 15px;
+      .actual-text {
+        width: 100%;
+        .btn {
+          width: calc(100vw - 20px);
+          padding: 1.3em;
+          text-align: center;
+          font-size: 1.8em;
+        }
+      }
+      .actual-img {
+        width: calc(100vw - 25px);
+        margin-left: 0;
+      }
+    }
+
+    .tecnologia,
+    .ondas {
+      display: none;
     }
   }
 }

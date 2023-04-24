@@ -1,1 +1,35 @@
 // Mixins acá
+.flex(@direction,@justify,@align){
+    display: flex;
+    flex-direction: @direction;
+    align-items: @align;
+    justify-content:@justify;
+}
+
+.boton-mix(@bg-color,@text-color,@width,@height){
+    background-color: @bg-color;
+    color: @text-color;
+    // width: fit-content;
+    width: @width;
+    height: @height;
+    padding: 0.5em;
+    border-radius:0.5em;
+
+    cursor: pointer;
+    &:hover {
+        background-color: @wild-sand;
+        color: @ebony-clay;
+        border: @bg-color solid 0.1em;
+    }
+}
+// .button(@width;@heigth;@padding;@font-size) {
+//     background-color: @btn-bg-color;
+//     color: @wild-sand;
+//     width: @width;
+//     height: @heigth;
+//     padding: @padding;
+//     font-size: @font-size;
+//     border-radius: 5px;
+    
+//   }
+
