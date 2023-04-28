@@ -35,7 +35,6 @@ var matchFunctionMaker = function(selector) {
   } else if (selectorType === "class") {
     
   } else if (selectorType === "tag.class") {
-    }
     
   } else if (selectorType === "tag") {
    
