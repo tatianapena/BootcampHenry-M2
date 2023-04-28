@@ -9,15 +9,7 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   // usa matchFunc para identificar elementos que matchien
 
   // TU CÓDIGO AQUÍ
-  if(matchFunc(startEl))resultSet.push(startEl);
-   
-  //recorrer los hijos
-  for (let i = 0; i < startEl.children.length; i++) {
-    let resultado = traverseDomAndCollectElements(matchFunc,startEl.children[i])
-    
-    resultSet = [...resultSet, ...resultado]
-  }
-  return resultSet;
+  
   
 };
 
@@ -25,17 +17,8 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
 // devuelve uno de estos tipos: id, class, tag.class, tag
 
 
-var selectorTypeMatcher = function(selector) { //'#myId', '.myClass', 'img.imagen', 'img'
+var selectorTypeMatcher = function(selector) { 
   // tu código aquí
-  if(selector[0] === '#') return 'id';
-  else if(selector[0] === '.') return 'class'
-  // for (let i = 0; i < selector.length; i++) {
-  //   if(selector[i] === '.') return 'tag.class'
-  // }
-  // if (selector.indexOf(".") !== -1) return "tag.class";
-  // if (selector.includes(".")) return "tag.class";
-  if (selector.split( '.' ). length === 2 ) return 'tag.class'
-  return 'tag'
 };
 
 
@@ -44,38 +27,18 @@ var selectorTypeMatcher = function(selector) { //'#myId', '.myClass', 'img.image
 // parametro y devuelve true/false dependiendo si el elemento
 // matchea el selector.
 
-var matchFunctionMaker = function(selector) { //'#myId', '.myClass', 'div'
+var matchFunctionMaker = function(selector) { 
   var selectorType = selectorTypeMatcher(selector);
   var matchFunction;
   if (selectorType === "id") { 
-    // matchFunction = function(elem){
-    //   return '#' + elem.id === selector
-    // }
-    matchFunction = elem => `#${elem.id}` === selector
    
-  } else if (selectorType === "class") {//'.myClass'
-    // matchFunction = function(elem){//div
-    //   for (let i = 0; i < elem.classList.length; i++) {
-    //     if('.' + elem.classList[i] === selector) return true
-    //   }
-    //}
-    matchFunction = elem => elem.classList.contains(selector.substring(1))
-     
+  } else if (selectorType === "class") {
     
-  } else if (selectorType === "tag.class") { //'div.myClass'
-    //destructuración
-    //separarlos por el puntico
-    //recursión
-    matchFunction = function(elem){ // ['div', 'myClass']
-      let [t,c] = selector.split('.') // [tag, class] -> t = tag, c = class
-      return matchFunctionMaker(t)(elem) && matchFunctionMaker('.' + c)(elem)
+  } else if (selectorType === "tag.class") {
     }
     
-  } else if (selectorType === "tag") { //'div'
-    matchFunction = function(elem){
-      return elem.tagName.toLowerCase() === selector.toLowerCase() //--> 'div' === 'div
-    }
-    
+  } else if (selectorType === "tag") {
+   
   }
   return matchFunction;
 };
@@ -86,7 +49,3 @@ var $ = function(selector) {
   elements = traverseDomAndCollectElements(selectorMatchFunc);
   return elements;
 };
-
-
-
-//$('.myClass') -> document.querySelectorAll('.myClass')
