@@ -1,1 +1,25 @@
 // Mixins acá
+// mixin -> funcion()
+.flex(@display:flex, @padding:10px) {
+  display: @display;
+  padding-top: @padding;
+}
+.imgBorder(@border: 20px) {
+  border-radius: @border;
+  margin-top: 5px;
+}
+
+.button(@bg: @btn-bg-color, @border:10px ) {
+  background-color: @bg;
+  border-radius: @border;
+  color: @border-real;
+  display: inline-block;
+  padding: 10px;
+  &:hover {
+    background-color: @border-real;
+    color: @bg;
+    cursor: pointer;
+  }
+}
+
+
