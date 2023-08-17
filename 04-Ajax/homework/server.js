@@ -88,6 +88,6 @@ app.delete("/amigos/:id", (req, res) => {
   res.status(200).json(amigos);
 });
 
-app.listen(5000, () => {
-  console.log("server listening on port 5000");
+app.listen(3000, () => {
+  console.log("server listening on port 3000");
 });
