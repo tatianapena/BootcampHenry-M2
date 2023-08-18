@@ -1,5 +1,5 @@
-(function () {
-  window.EventEmitter = EventEmitter;
+
+  
 
   // our EventEmitter constructor function
   function EventEmitter() {
@@ -37,4 +37,7 @@
       listener.apply(null, remainingArgs);
     });
   };
-})();
+
+  module.exports = EventEmitter // no se colocan entre llaves porque es 1 sola cosa la que estoy exportando.
+  
+
