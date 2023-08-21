@@ -14,13 +14,12 @@ export default function Bienvenido() {
       <h1>Welcome to my app</h1>
       <h3>{studentName}</h3>
       <ul>
-        <li>{techSkills[0]}</li>
-        <li>{techSkills[1]}</li>
-        <li>{techSkills[2]}</li>
-        <li>{techSkills[3]}</li>
-        <li>{techSkills[4]}</li>
+        {techSkills.map((skill, index) => (
+        <li key= {index}> 
+        {skill}
+        </li>))}
       </ul>
-      <Botones props={alerts}/>
+      <Botones alerts = {alerts}/>
     </div>
   );
 }
